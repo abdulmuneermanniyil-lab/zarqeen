@@ -3,237 +3,205 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zarqeen • Accounting Software</title>
-  <meta name="description" content="Zarqeen — Lightweight accounting & invoicing software for small businesses and law firms. Download the Windows installer." />
+  <title>Zarqeen — Plans & Pricing</title>
+  <meta name="description" content="Plans, pricing and subscription details for Zarqeen Accounting Software — 7-day free trial, affordable Basic (1 year) and value-packed Premium (3 years)." />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-
   <style>
-    /* Minimal modern CSS — single file */
     :root{
-      --bg:#f4f7fb;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#0b74de;
-      --accent-2:#0a58c7;
-      --radius:14px;
-      --gap:18px;
-      --maxw:1100px;
+      --bg:#f7fafc; --card:#fff; --accent:#0b74de; --muted:#556175; --radius:12px; --maxw:1100px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#0f1724; -webkit-font-smoothing:antialiased}
-    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:var(--bg);color:#0b2236}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+    header{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:8px;object-fit:cover}
+    h1{margin:0;font-size:20px}
+    p.lead{color:var(--muted);margin:6px 0 0}
 
-    /* Header */
-    header{background:linear-gradient(90deg,#fff 0%,#f8fbff 100%);border-bottom:1px solid rgba(15,23,42,0.04)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:10px;object-fit:cover}
-    .brand h1{margin:0;font-size:18px}
-    .tag{margin:0;color:var(--muted);font-size:13px}
-    nav a{margin-left:14px;color:var(--muted);text-decoration:none;font-size:14px}
-    nav a:hover{color:var(--accent)}
+    .hero{display:flex;gap:24px;align-items:center;margin-top:18px}
+    .hero-left{flex:1}
+    .hero-right{width:380px}
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 400px;gap:28px;align-items:center;padding:40px 0}
-    .hero h2{font-size:28px;margin:0 0 12px}
-    .lead{color:var(--muted);margin:0 0 18px}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(12,19,30,0.06)}
+    .price{font-size:28px;font-weight:700;margin:0}
+    .sub{color:var(--muted);margin-top:6px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+    .btn-ghost{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid rgba(12,19,30,0.06);background:transparent;color:var(--muted);text-decoration:none}
 
-    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(13,17,26,0.06)}
-    .download-card{display:flex;flex-direction:column;gap:12px}
-    .download-meta{display:flex;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:14px}
-    .btn-primary{display:inline-block;padding:12px 18px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:600;box-shadow:0 8px 24px rgba(11,116,222,0.15)}
-    .btn-outline{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);text-decoration:none;color:var(--muted);background:transparent}
+    /* pricing cards */
+    .plans{display:flex;gap:16px;margin-top:20px}
+    .plan{flex:1;padding:18px;border-radius:12px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid rgba(12,19,30,0.04)}
+    .plan h3{margin:0 0 6px}
+    .plan .price{color:var(--accent)}
+    .features{margin-top:12px;color:var(--muted);font-size:14px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#e6f0ff;color:var(--accent);font-weight:600;font-size:13px}
+    .popular{border:2px solid rgba(11,116,222,0.12);box-shadow:0 12px 26px rgba(11,116,222,0.06)}
 
-    /* Features */
-    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-    .feature{background:#fff;padding:14px;border-radius:10px;border:1px solid rgba(15,23,42,0.03);min-height:90px}
-    .feature h4{margin:0 0 6px;font-size:15px}
-    .feature p{margin:0;color:var(--muted);font-size:13px}
+    /* comparison */
+    .compare{margin-top:22px}
+    table{width:100%;border-collapse:collapse;background:transparent}
+    th,td{padding:12px;border-bottom:1px solid rgba(12,19,30,0.04);text-align:left}
+    th{background:#fbfdff}
 
-    /* Screenshots */
-    .screens{display:flex;gap:12px;margin-top:18px}
-    .ss{flex:1;border-radius:10px;overflow:hidden;border:1px solid rgba(15,23,42,0.04);background:#fff;min-height:140px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+    /* faq */
+    .faq{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .faq .q{background:#fff;padding:12px;border-radius:10px}
 
-    /* Footer */
-    footer{padding:22px 0;margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+    footer{margin-top:26px;padding:18px 0;color:var(--muted);font-size:13px;text-align:center}
 
-    /* Responsive */
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .features{grid-template-columns:repeat(2,1fr)}
-    }
-    @media (max-width:640px){
-      .features{grid-template-columns:1fr}
-      nav{display:none}
-      .brand h1{font-size:16px}
-    }
-
-    /* small utilities */
-    .muted{color:var(--muted)}
-    .row{display:flex;gap:12px;align-items:center}
-    .small{font-size:13px;color:var(--muted)}
-    code.kv{background:#f3f6fb;padding:6px 8px;border-radius:8px;font-family:monospace}
+    @media(max-width:900px){.plans{flex-direction:column}.hero{flex-direction:column}.hero-right{width:100%}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
+  <div class="wrap">
+    <header>
       <div class="brand">
-        <!-- Replace LOGO_URL with your logo path or keep as is -->
-        <img src="LOGO_URL" alt="Zarqeen" class="logo" onerror="this.style.display='none'">
+        <img src="LOGO_URL" class="logo" onerror="this.style.display='none'" alt="Zarqeen">
         <div>
           <h1>Zarqeen</h1>
-          <p class="tag">Accounting & Invoicing software — simple, offline-first</p>
+          <p class="lead">Simple, fast billing — affordable subscriptions with a 7-day trial.</p>
         </div>
       </div>
       <nav>
-        <a href="#features">Features</a>
-        <a href="#download">Download</a>
-        <a href="#support">Support</a>
+        <a href="#download" class="btn-ghost">Download</a>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main class="container">
     <section class="hero">
-      <div>
-        <h2>Clean accounting, faster billing — built for small businesses</h2>
-        <p class="lead">Zarqeen is a lightweight accounting solution tailored for law firms and small businesses. Runs on Windows, keeps data local, and offers optional cloud backup for admins.</p>
+      <div class="hero-left">
+        <h2>Plans built for small businesses and law firms</h2>
+        <p class="lead">Try everything free for 7 days. Choose a low-cost annual plan or save more with the 3-year premium plan.</p>
 
-        <div class="card">
-          <div class="download-card" id="download">
-            <div class="row" style="justify-content:space-between;align-items:center">
+        <div class="plans">
+          <div class="plan card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
               <div>
-                <div class="small">Latest release</div>
-                <div style="font-weight:700;font-size:16px" id="ver">APP_VERSION</div>
-                <div class="small muted" id="fn">FILE_NAME</div>
+                <h3>Free Trial</h3>
+                <div class="sub">7 days — full features</div>
               </div>
-              <div style="text-align:right">
-                <!-- Google Drive direct-download link: replace FILEID -->
-                <a id="dlBtn" class="btn-primary" href="https://drive.google.com/uc?export=download&id=GOOGLE_DRIVE_FILE_ID" target="_blank" rel="noopener">⬇️ Download</a>
-                <div style="height:8px"></div>
-                <a id="mirror" class="btn-outline" href="#" onclick="copyDL();return false;">Copy download link</a>
+              <div class="badge">Try</div>
+            </div>
+            <div class="features">
+              <ul>
+                <li>All features unlocked for 7 days</li>
+                <li>No credit card required</li>
+                <li>Local data storage (SQLite)</li>
+              </ul>
+            </div>
+            <div style="margin-top:12px">
+              <a class="btn" href="#download">Start Free Trial</a>
+            </div>
+          </div>
+
+          <div class="plan card popular">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <h3>Basic — 1 Year</h3>
+                <div class="sub">Affordable for single office</div>
+              </div>
+              <div>
+                <div class="price">PRICE_BASIC</div>
+                <div class="sub small">CURRENCY_LABEL / year</div>
               </div>
             </div>
-
-            <div class="download-meta">
-              <div>Size: <span id="fs">200 MB</span></div>
-              <div>SHA256: <code class="kv" id="sha">SHA256_CHECKSUM</code></div>
+            <div class="features">
+              <ul>
+                <li>All invoicing & reporting features</li>
+                <li>Email support & small updates</li>
+                <li>Single machine license</li>
+              </ul>
             </div>
+            <div style="margin-top:12px">
+              <a class="btn" href="#download">Buy Basic</a>
+            </div>
+          </div>
 
-            <div style="margin-top:8px" class="small muted">Installer is for Windows. For bulk licensing or offline installers, contact <a href="mailto:abdulmuneermanniyil@gmail.com">abdulmuneermanniyil@gmail.com</a></div>
+          <div class="plan card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <h3>Premium — 3 Years</h3>
+                <div class="sub">Best value & extended support</div>
+              </div>
+              <div>
+                <div class="price">PRICE_PREMIUM</div>
+                <div class="sub small">CURRENCY_LABEL / 3 years</div>
+              </div>
+            </div>
+            <div class="features">
+              <ul>
+                <li>Priority support & feature requests</li>
+                <li>Multi-machine licensing option</li>
+                <li>Includes minor upgrades</li>
+              </ul>
+            </div>
+            <div style="margin-top:12px">
+              <a class="btn" href="#download">Buy Premium</a>
+            </div>
           </div>
         </div>
 
-        <div style="margin-top:18px">
-          <h4>Quick install (Windows)</h4>
-          <ol class="small muted">
-            <li>Download the installer using the button above.</li>
-            <li>Run the downloaded file and follow the installer steps.</li>
-            <li>Open Zarqeen from Start Menu. Data stored locally (AppData or chosen path).</li>
-          </ol>
+        <div class="compare card" style="margin-top:16px">
+          <h4 style="margin:0 0 8px 0">Plan comparison</h4>
+          <table>
+            <thead>
+              <tr><th>Feature</th><th>Free Trial</th><th>Basic (1y)</th><th>Premium (3y)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Invoice creation</td><td>✔</td><td>✔</td><td>✔</td></tr>
+              <tr><td>Export reports</td><td>✔</td><td>✔</td><td>✔</td></tr>
+              <tr><td>Priority support</td><td>—</td><td>✔</td><td>✔</td></tr>
+              <tr><td>Multi-machine license</td><td>—</td><td>—</td><td>Option</td></tr>
+            </tbody>
+          </table>
         </div>
+
       </div>
 
-      <aside>
-        <div class="card small">
-          <h4 style="margin-top:0">Why choose Zarqeen?</h4>
-          <ul style="padding-left:18px;margin:8px 0 0 0;color:var(--muted)">
-            <li>Local-first storage (SQLite) with optional cloud sync.</li>
-            <li>Invoices, quotations, customers, vendors, payments.</li>
-            <li>Export reports to CSV/Excel; print-ready invoices.</li>
-            <li>Minimal learning curve — Excel-like workflows.</li>
-          </ul>
-          <div style="margin-top:12px">
-            <a href="#support" class="btn-outline">Contact Sales</a>
+      <aside class="hero-right">
+        <div class="card" id="download">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="small">Latest</div>
+              <div style="font-weight:700" id="ver">APP_VERSION</div>
+              <div class="small muted" id="fn">FILE_NAME</div>
+            </div>
+            <div style="text-align:right">
+              <a id="dlBtn" class="btn" href="https://drive.google.com/uc?export=download&id=GOOGLE_DRIVE_FILE_ID" target="_blank">⬇️ Download</a>
+            </div>
+          </div>
+          <div style="margin-top:12px;color:var(--muted);font-size:14px">
+            <div>Size: <strong id="fs">200 MB</strong></div>
+            <div style="margin-top:6px">SHA256: <code id="sha">SHA256_CHECKSUM</code></div>
+            <div style="margin-top:10px;color:var(--muted);font-size:13px">Data stored locally on customer machine — keep backups. Company not responsible for hardware damage or data loss.</div>
           </div>
         </div>
 
         <div style="height:12px"></div>
-        <div class="card small">
-          <h4 style="margin-top:0">Screenshots</h4>
-          <div class="screens">
-            <div class="ss">Screenshot 1</div>
-            <div class="ss">Screenshot 2</div>
-          </div>
+        <div class="card">
+          <h4 style="margin:0 0 8px 0">Need help?</h4>
+          <p class="small muted">Email <a href="mailto:abdulmuneermanniyil@gmail.com">abdulmuneermanniyil@gmail.com</a> for licensing or installation support.</p>
         </div>
       </aside>
     </section>
 
-    <section id="features" style="margin-top:22px">
-      <h3>Core features</h3>
-      <div class="features">
-        <div class="feature">
-          <h4>Simple & Fast Billing</h4>
-          <p>Design focused on speed — create invoices and bills in seconds with a minimal interface built for everyday use.</p>
-        </div>
-        <div class="feature">
-          <h4>Local-first Storage</h4>
-          <p>All data is stored locally on your machine (SQLite). This keeps your financial data under your control and ensures offline access.</p>
-        </div>
-        <div class="feature">
-          <h4>Lightweight & Reliable</h4>
-          <p>Small installer, quick setup, and low system requirements so it runs smoothly on typical Windows machines.</p>
-        </div>
-      </div>
-
-      <h3 style="margin-top:20px">Subscription & Plans</h3>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
-        <div class="feature" style="min-width:220px;flex:1">
-          <h4>Free Trial</h4>
-          <p class="small muted">7-day free trial — try all features before committing.</p>
-        </div>
-        <div class="feature" style="min-width:220px;flex:1">
-          <h4>Basic</h4>
-          <p class="small muted">1 year plan — inexpensive, suitable for single-office use.</p>
-        </div>
-        <div class="feature" style="min-width:220px;flex:1">
-          <h4>Premium</h4>
-          <p class="small muted">3 year plan — best value for firms needing long-term support and extended features.</p>
-        </div>
-      </div>
-
-      <h3 style="margin-top:18px">Important Notice</h3>
-      <div class="card small" style="margin-top:8px">
-        <p class="muted">Data Storage & Liability:</p>
-        <p class="small muted">Zarqeen stores all application data locally on the customer's machine. The company is not responsible for data loss resulting from damage to, theft of, or malfunction of the customer's hardware. We recommend customers keep regular backups of their data.</p>
-      </div>
+    <section class="faq">
+      <div class="q card"><strong>Q: How does the free trial work?</strong><p class="small muted">A: Install the app and use all features for 7 days. After trial, purchase a plan to continue using premium features.</p></div>
+      <div class="q card"><strong>Q: Can I move data to another computer?</strong><p class="small muted">A: Yes — data is stored locally in an SQLite file; copy the file to transfer (we recommend backups).</p></div>
+      <div class="q card"><strong>Q: Do you provide refunds?</strong><p class="small muted">A: Refunds are handled case-by-case. Contact support for details.</p></div>
+      <div class="q card"><strong>Q: Is the installer safe?</strong><p class="small muted">A: Yes — always download from the official link and verify the SHA256 checksum.</p></div>
     </section>
 
-    <section id="support" style="margin-top:22px">
-      <h3>Support & Licensing</h3>
-      <div class="card small">
-        <p class="muted">For installation help, bulk licensing, or activation codes please email:</p>
-        <p><strong><a href="mailto:abdul.muneer@mangalam.in">abdul.muneer@mangalam.in</a></strong></p>
-        <p class="small muted">If you want restricted downloads or per-customer signed links, we can set up a small backend and issue signed URLs.</p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <p class="small muted">© <span id="yr"></span> Zarqeen — Built & maintained by Abdul Muneer M. All rights reserved.</p>
-    </div>
-  </footer>
+    <footer>
+      <div style="padding:18px 0;color:var(--muted);text-align:center">© <span id="yr"></span> Zarqeen — All rights reserved.</div>
+    </footer>
+  </div>
 
   <script>
-    // small helpers
     document.getElementById('yr').textContent = new Date().getFullYear();
-
-    function copyDL(){
-      const id = 'GOOGLE_DRIVE_FILE_ID';
-      const url = `https://drive.google.com/uc?export=download&id=${id}`;
-      navigator.clipboard?.writeText(url).then(()=>{
-        alert('Download link copied to clipboard');
-      }).catch(()=>{
-        prompt('Copy this link', url);
-      });
-    }
-
-    // allow URL param overrides for quick updates (e.g., ?v=1.2.3)
+    // Accept replacements via URL params for quick updates
     const p = new URLSearchParams(location.search);
+    if(p.get('price_basic')) document.querySelectorAll('#dlBtn')[0] = document.querySelector('#dlBtn');
     if(p.get('v')) document.getElementById('ver').textContent = p.get('v');
     if(p.get('file')) document.getElementById('fn').textContent = p.get('file');
     if(p.get('size')) document.getElementById('fs').textContent = p.get('size');
