@@ -1,3 +1,10 @@
+<!--
+  Zarqeen Pricing Page
+  - Save as: pricing.html (or replace index.html)
+  - Replace placeholders: GOOGLE_DRIVE_FILE_ID, PRICE_BASIC, PRICE_PREMIUM, CURRENCY_LABEL, LOGO_URL
+  - This file emphasizes plans and includes CTAs, trial info, FAQ, and legal notice.
+-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -70,6 +77,29 @@
 
     <section class="hero">
       <div class="hero-left">
+        <!-- DOWNLOAD FIRST -->
+        <div class="card" id="download">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="small">Latest</div>
+              <div style="font-weight:700" id="ver">APP_VERSION</div>
+              <div class="small muted" id="fn">FILE_NAME</div>
+            </div>
+            <div style="text-align:right">
+              <a id="dlBtn" class="btn" href="https://drive.google.com/uc?export=download&id=GOOGLE_DRIVE_FILE_ID" target="_blank">⬇️ Download</a>
+            </div>
+          </div>
+          <div style="margin-top:12px;color:var(--muted);font-size:14px">
+            <div>Size: <strong id="fs">200 MB</strong></div>
+            <div style="margin-top:6px">SHA256: <code id="sha">SHA256_CHECKSUM</code></div>
+            <div style="margin-top:10px;color:var(--muted);font-size:13px">Data stored locally on customer machine — keep backups. Company not responsible for hardware damage or data loss.</div>
+          </div>
+        </div>
+
+        <!-- SPACE -->
+        <div style="height:22px"></div>
+
+        <!-- PLANS START -->
         <h2>Plans built for small businesses and law firms</h2>
         <p class="lead">Try everything free for 7 days. Choose a low-cost annual plan or save more with the 3-year premium plan.</p>
 
@@ -141,6 +171,7 @@
           </div>
         </div>
 
+        <!-- COMPARISON TABLE -->
         <div class="compare card" style="margin-top:16px">
           <h4 style="margin:0 0 8px 0">Plan comparison</h4>
           <table>
@@ -159,25 +190,6 @@
       </div>
 
       <aside class="hero-right">
-        <div class="card" id="download">
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div class="small">Latest</div>
-              <div style="font-weight:700" id="ver">APP_VERSION</div>
-              <div class="small muted" id="fn">FILE_NAME</div>
-            </div>
-            <div style="text-align:right">
-              <a id="dlBtn" class="btn" href="https://drive.google.com/uc?export=download&id=GOOGLE_DRIVE_FILE_ID" target="_blank">⬇️ Download</a>
-            </div>
-          </div>
-          <div style="margin-top:12px;color:var(--muted);font-size:14px">
-            <div>Size: <strong id="fs">200 MB</strong></div>
-            <div style="margin-top:6px">SHA256: <code id="sha">SHA256_CHECKSUM</code></div>
-            <div style="margin-top:10px;color:var(--muted);font-size:13px">Data stored locally on customer machine — keep backups. Company not responsible for hardware damage or data loss.</div>
-          </div>
-        </div>
-
-        <div style="height:12px"></div>
         <div class="card">
           <h4 style="margin:0 0 8px 0">Need help?</h4>
           <p class="small muted">Email <a href="mailto:abdulmuneermanniyil@gmail.com">abdulmuneermanniyil@gmail.com</a> for licensing or installation support.</p>
