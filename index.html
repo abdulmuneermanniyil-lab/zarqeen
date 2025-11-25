@@ -1,10 +1,3 @@
-<!--
-  Zarqeen Pricing Page
-  - Save as: pricing.html (or replace index.html)
-  - Replace placeholders: GOOGLE_DRIVE_FILE_ID, PRICE_BASIC, PRICE_PREMIUM, CURRENCY_LABEL, LOGO_URL
-  - This file emphasizes plans and includes CTAs, trial info, FAQ, and legal notice.
--->
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,7 +15,7 @@
     .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
     header{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
     .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:48px;height:48px;border-radius:8px;object-fit:cover}
+    .logo{width:56px;height:56px;border-radius:8px;object-fit:contain}
     h1{margin:0;font-size:20px}
     p.lead{color:var(--muted);margin:6px 0 0}
 
@@ -33,7 +26,7 @@
     .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(12,19,30,0.06)}
     .price{font-size:28px;font-weight:700;margin:0}
     .sub{color:var(--muted);margin-top:6px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;border:none;cursor:pointer}
     .btn-ghost{display:inline-block;padding:10px 14px;border-radius:10px;border:1px solid rgba(12,19,30,0.06);background:transparent;color:var(--muted);text-decoration:none}
 
     /* pricing cards */
@@ -64,13 +57,17 @@
   <div class="wrap">
     <header>
       <div class="brand">
-        <img src="LOGO_URL" class="logo" onerror="this.style.display='none'" alt="Zarqeen">
+        <!-- You placed logo.png inside the static folder in your Render site -->
+        <img src="/static/logo.png" class="logo" onerror="this.style.display='none'" alt="Zarqeen">
         <div>
           <h1>Zarqeen</h1>
           <p class="lead">Simple, fast billing — affordable subscriptions with a 7-day trial.</p>
         </div>
       </div>
-      
+      <nav style="align-self:center">
+        <a href="/" style="color:var(--muted);text-decoration:none;margin-right:12px;">Home</a>
+        <a href="/pricing.html" style="color:var(--muted);text-decoration:none;margin-left:12px;">Pricing</a>
+      </nav>
     </header>
 
     <section class="hero">
@@ -84,20 +81,18 @@
               <div class="small muted" id="fn">Alif</div>
             </div>
             <div style="text-align:right">
-              <a id="dlBtn" class="btn" href="https://drive.google.com/uc?export=download&id=GOOGLE_DRIVE_FILE_ID" target="_blank">⬇️ Download</a>
+              <!-- Primary download: Google Drive folder (you provided) -->
+              <a id="dlBtn" class="btn" href="https://drive.google.com/drive/folders/17O3vY4KYUzd7Rma4o8rp3j2iIrpqhJe9?usp=sharing" target="_blank" rel="noopener">⬇️ Download</a>
             </div>
           </div>
           <div style="margin-top:12px;color:var(--muted);font-size:14px">
             <div>Size: <strong id="fs">200 MB</strong></div>
-           
             <div style="margin-top:10px;color:var(--muted);font-size:13px">Data stored locally on customer machine — keep backups. Company not responsible for hardware damage or data loss.</div>
           </div>
         </div>
 
-        <!-- SPACE -->
         <div style="height:22px"></div>
 
-        <!-- PLANS START -->
         <h2>Plans built for small and medium businesses </h2>
         <p class="lead">Try everything free for 7 days. Choose a low-cost basic plan or save more with the 3-year premium plan.</p>
 
@@ -118,7 +113,10 @@
               </ul>
             </div>
             <div style="margin-top:12px">
-              <a class="btn" href="#download">Start Free Trial</a>
+              <!-- If you host the trial start API on your Flask app, you can change action to that route -->
+              <form method="post" action="/start_trial">
+                <button class="btn" type="submit">Start Free Trial</button>
+              </form>
             </div>
           </div>
 
@@ -129,7 +127,7 @@
                 <div class="sub">Affordable for single office</div>
               </div>
               <div>
-                <div class="price">₹299</div>
+                <div class="price" id="price-basic">₹299</div>
                 <div class="sub small">/ year</div>
               </div>
             </div>
@@ -141,7 +139,10 @@
               </ul>
             </div>
             <div style="margin-top:12px">
-              <a class="btn" href="#download">Buy Basic</a>
+              <form method="post" action="/buy_plan">
+                <input type="hidden" name="plan" value="basic">
+                <button class="btn" type="submit">Buy Basic</button>
+              </form>
             </div>
           </div>
 
@@ -152,7 +153,7 @@
                 <div class="sub">Best value & extended support</div>
               </div>
               <div>
-                <div class="price">₹599</div>
+                <div class="price" id="price-premium">₹599</div>
                 <div class="sub small">/ 3 years</div>
               </div>
             </div>
@@ -164,18 +165,19 @@
               </ul>
             </div>
             <div style="margin-top:12px">
-              <a class="btn" href="#download">Buy Premium</a>
+              <form method="post" action="/buy_plan">
+                <input type="hidden" name="plan" value="premium">
+                <button class="btn" type="submit">Buy Premium</button>
+              </form>
             </div>
           </div>
         </div>
 
-      <!-- Help Box Moved Below Plans and Comparison -->
-      <div class="card" style="margin-top:20px">
-        <h4 style="margin:0 0 8px 0">Need help?</h4>
-        <p class="small muted">Email <a href="mailto:zarqeensoftware@gmail.com">zarqeensoftware@gmail.com</a> for licensing or installation support.</p>
-      </div>
+        <div class="card" style="margin-top:20px">
+          <h4 style="margin:0 0 8px 0">Need help?</h4>
+          <p class="small muted">Email <a href="mailto:zarqeensoftware@gmail.com">zarqeensoftware@gmail.com</a> for licensing or installation support.</p>
+        </div>
 
-      <!-- COMPARISON TABLE -->
         <div class="compare card" style="margin-top:16px">
           <h4 style="margin:0 0 8px 0">Plan comparison</h4>
           <table>
@@ -187,7 +189,6 @@
               <tr><td>Export reports</td><td>✔</td><td>✔</td><td>✔</td></tr>
               <tr><td>Priority support</td><td>—</td><td>✔</td><td>✔</td></tr>
               <tr><td>Multi user limit</td><td>0</td><td>1</td><td>3</td></tr>
-              
             </tbody>
           </table>
         </div>
@@ -195,7 +196,13 @@
       </div>
 
       <aside class="hero-right">
-        <!-- Removed help box from sidebar -->
+        <div class="card">
+          <h4>Why Zarqeen?</h4>
+          <p class="small muted">Lightweight installer, offline-first storage, and simple billing designed for local businesses.</p>
+          <div style="margin-top:12px">
+            <a class="btn-ghost" href="#download">Installer & Docs</a>
+          </div>
+        </div>
       </aside>
     </section>
 
@@ -212,14 +219,28 @@
   </div>
 
   <script>
+    // Set current year
     document.getElementById('yr').textContent = new Date().getFullYear();
-    // Accept replacements via URL params for quick updates
+
+    // URL param overrides: ?v=1.1&file=alif&size=200MB&price_basic=350&price_premium=700
     const p = new URLSearchParams(location.search);
-    if(p.get('price_basic')) document.querySelectorAll('#dlBtn')[0] = document.querySelector('#dlBtn');
     if(p.get('v')) document.getElementById('ver').textContent = p.get('v');
     if(p.get('file')) document.getElementById('fn').textContent = p.get('file');
     if(p.get('size')) document.getElementById('fs').textContent = p.get('size');
-    if(p.get('sha')) document.getElementById('sha').textContent = p.get('sha');
+    if(p.get('price_basic')) document.getElementById('price-basic').textContent = '₹' + p.get('price_basic');
+    if(p.get('price_premium')) document.getElementById('price-premium').textContent = '₹' + p.get('price_premium');
+
+    // If you prefer using your Flask app's installer route instead of Drive, pass ?use_app_download=1
+    if(p.get('use_app_download') === '1') {
+      // This will point to your Flask server root's download route
+      document.getElementById('dlBtn').href = '/download_installer';
+    }
+
+    // If you pass a direct drive file id (?drive_file=FILE_ID) the download button will use the file download url
+    if(p.get('drive_file')) {
+      const id = p.get('drive_file');
+      document.getElementById('dlBtn').href = `https://drive.google.com/uc?export=download&id=${id}`;
+    }
   </script>
 </body>
 </html>
