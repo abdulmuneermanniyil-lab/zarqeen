@@ -12,7 +12,6 @@
       --muted:#6b7280;
       --accent:#0f766e;
       --accent-2:#06b6d4;
-      --glass: rgba(255,255,255,0.6);
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     }
     *{box-sizing:border-box}
@@ -55,6 +54,7 @@
     @media(max-width:980px){ .plans-grid{grid-template-columns:repeat(2,1fr)} }
     @media(max-width:720px){ .plans-grid{grid-template-columns:1fr} }
 
+    /* Unified plan styling */
     .plan{
       background:var(--card);
       padding:18px;
@@ -66,7 +66,7 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* Hover animation only effective on pointer devices (desktop) */
+    /* Hover animation only on devices that support hover */
     @media (hover: hover) and (pointer: fine) {
       .plan{ cursor: pointer; }
       .plan:hover{
@@ -74,13 +74,8 @@
         box-shadow: 0 12px 30px rgba(2,6,23,0.12);
         border-color: rgba(2,6,23,0.12);
       }
-      .plan.popular:hover{
-        transform: translateY(-10px) scale(1.06);
-        box-shadow: 0 16px 38px rgba(6,182,212,0.14);
-      }
     }
 
-    .plan.popular{border:2px solid var(--accent);box-shadow:0 6px 22px rgba(6,182,212,0.08)}
     .plan h3{margin:0 0 6px}
     .lead{color:var(--muted);font-size:13px;margin:0 0 10px}
     .price{font-size:22px;margin:8px 0 6px;font-weight:700;color:#0d9488}
@@ -95,7 +90,6 @@
     .use-cases{color:var(--muted);font-size:14px}
     footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px;padding:14px 0}
 
-    /* small utilities */
     .muted{color:var(--muted);font-size:13px}
     .accent-line{height:4px;width:48px;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:6px;margin:12px 0}
     .center{display:flex;align-items:center;justify-content:center}
@@ -160,7 +154,7 @@
           </article>
 
           <!-- Basic -->
-          <article class="plan popular" role="listitem" aria-labelledby="basic-title">
+          <article class="plan" role="listitem" aria-labelledby="basic-title">
             <h3 id="basic-title">Basic <span style="font-weight:600;color:var(--muted);font-size:13px">— 1 Year</span></h3>
             <p class="price">₹299</p>
             <p class="lead">Duration: 1 year from expiry or from today if expired</p>
@@ -226,10 +220,10 @@
         <div class="accent-line" aria-hidden="true"></div>
         <p class="use-cases">
           • Extremely light & fast<br>
-          • Works offline (local data)<br>
+          • Works offline<br>
           • Simple UI — no training required<br>
           • Ideal for small shops, freelancers, consultants<br>
-          • GST/Tax support on invoices
+          • Tax support on invoices
         </p>
 
         <h3 style="margin-top:18px">Quick facts</h3>
