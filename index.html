@@ -3,60 +3,64 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zarqeen – Invoicing</title>
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="/static/header.png">
-    <title>Zarqeen Alif — Simple & Fast Invoice Generator</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 <div class="container">
 
+    <!-- Header Logo -->
     <header class="header-area">
-    <img src="/static/logo.png" alt="Zarqeen Logo" class="logo">
+        <img src="/static/logo.png" alt="Zarqeen Logo" class="logo">
 
-    <div class="brand">
-        <h1>Zarqeen Alif</h1>
-        <p class="muted">Lightweight invoice generator — fast, offline & simple</p>
-    </div>
-</header>
+        <div class="brand">
+            <h1>Zarqeen Alif</h1>
+            <p class="muted">Lightweight invoice generator — fast, offline & simple</p>
+        </div>
+    </header>
 
-
+    <!-- Main Section -->
     <section class="hero">
 
-        <!-- Download Section -->
         <div class="main">
+
+            <!-- Download Card -->
             <div class="download-card">
                 <div>
                     <h3>Download Zarqeen Alif — Alif 1.1</h3>
                     <p class="download-meta">INVOICE GENERATOR • Size: 200 MB • Version date: 25-11-2025</p>
-                    <p class="download-meta">Installer files available: .exe / .AppImage / .dmg</p>
+                    <p class="download-meta">Available installers: .exe / .AppImage / .dmg</p>
                 </div>
 
                 <div style="text-align:right">
-                    <a id="downloadLink" class="btn" href="https://drive.google.com/drive/folders/17O3vY4KYUzd7Rma4o8rp3j2iIrpqhJe9?usp=sharing" target="_blank">⬇ Download</a>
+                    <a class="btn" href="https://drive.google.com/drive/folders/17O3vY4KYUzd7Rma4o8rp3j2iIrpqhJe9?usp=sharing" target="_blank">⬇ Download</a>
                     <div style="margin-top:8px"><a class="btn secondary" href="#plans">View Plans</a></div>
                 </div>
             </div>
 
-            <!-- Supported OS -->
+            <!-- OS -->
             <div class="os-box">
                 <strong>Supported Operating Systems</strong>
                 <div class="pill-group">
-                    <span class="pill">Windows 10 / 11 (64-bit)</span>
+                    <span class="pill">Windows 10 / 11</span>
                     <span class="pill">Ubuntu 18.04+</span>
                     <span class="pill">Debian 10+</span>
                     <span class="pill">macOS 10.14+</span>
                 </div>
-                <p class="muted">Select the correct installer after downloading.</p>
             </div>
 
             <!-- Plans -->
             <h2 id="plans">Plans</h2>
-            <p class="muted">Licenses extend from current plan expiry or from today if expired.</p>
+            <p class="muted">Licenses extend from expiry or start from today if expired.</p>
 
             <div class="plans-grid">
 
-                <!-- Free -->
                 <article class="plan">
                     <h3>Free</h3>
                     <p class="lead">First 7 days • All features unlocked</p>
@@ -70,7 +74,6 @@
                     </div>
                 </article>
 
-                <!-- Basic -->
                 <article class="plan">
                     <h3>Basic — 1 Year</h3>
                     <p class="price">₹299</p>
@@ -81,7 +84,6 @@
                     </ul>
                 </article>
 
-                <!-- Premium -->
                 <article class="plan">
                     <h3>Premium — 3 Years</h3>
                     <p class="price">₹599</p>
@@ -95,9 +97,69 @@
 
             </div>
 
+            <!-- Comparison Table -->
+            <div class="compare-box">
+                <h3>Compare Plans</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Free</th>
+                                <th>Basic</th>
+                                <th>Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Duration</td><td>7 days</td><td>1 year</td><td>3 years</td></tr>
+                            <tr><td>Staff allowed</td><td>0</td><td>2</td><td>Unlimited</td></tr>
+                            <tr><td>Unlimited invoices</td><td>✔</td><td>✔</td><td>✔</td></tr>
+                            <tr><td>Unlimited items</td><td>✔</td><td>✔</td><td>✔</td></tr>
+                            <tr><td>Priority support</td><td>—</td><td>—</td><td>✔</td></tr>
+                            <tr><td>Updates included</td><td>✔</td><td>✔</td><td>✔</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <!-- Help -->
             <div class="help-box">
                 <h3>Need Help?</h3>
+                <p class="muted">
+                    Email: <a href="mailto:zarqeensoftware@gmail.com">zarqeensoftware@gmail.com</a>
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Aside -->
+        <aside class="side-card">
+            <h3>Why Zarqeen Alif?</h3>
+            <div class="accent-line"></div>
+            <p class="use-cases">
+                • Extremely light & fast<br>
+                • Works offline<br>
+                • Beginner-friendly UI<br>
+                • Ideal for shops, freelancers & lawyers<br>
+                • Unlimited invoices & items
+            </p>
+        </aside>
+
+    </section>
+
+    <footer>
+        © <span id="yr"></span> Zarqeen Software Solutions — All rights reserved
+    </footer>
+
+</div>
+
+<script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
                 <p class="muted">Email: <a href="mailto:zarqeensoftware@gmail.com">zarqeensoftware@gmail.com</a></p>
             </div>
         </div>
