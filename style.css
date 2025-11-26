@@ -7,7 +7,19 @@ body{margin:0;background:var(--bg);font-family:Inter, Poppins, system-ui; color:
 .wrap{max-width:var(--maxw);margin:0 auto;padding:28px;}
 header{display:flex;justify-content:space-between;align-items:center;padding:6px 0;}
 .brand{display:flex;gap:14px;align-items:center;}
-.logo{width:64px;height:64px;object-fit:contain;}
+.logo{
+  width:120px;
+  height:120px;
+  border-radius:14px;
+}
+
+@media(max-width:720px){
+  .logo{
+    width:90px;
+    height:90px;
+  }
+}
+
 h1{margin:0;font-size:22px;font-weight:800;}
 p.lead{color:var(--muted);margin:4px 0 0;font-size:14px;}
 .hero{display:grid;grid-template-columns:1fr 330px;gap:24px;margin-top:24px;}
