@@ -8,15 +8,16 @@ body{margin:0;background:var(--bg);font-family:Inter, Poppins, system-ui; color:
 header{display:flex;justify-content:space-between;align-items:center;padding:6px 0;}
 .brand{display:flex;gap:14px;align-items:center;}
 .logo{
-  width:150px;
-  height:120px;
+  width:120px;    
+  height:auto;      
+  object-fit:contain;
   border-radius:14px;
 }
 
 @media(max-width:720px){
   .logo{
-    width:90px;
-    height:90px;
+    width:90px;     
+    height:auto;
   }
 }
 
