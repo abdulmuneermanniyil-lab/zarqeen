@@ -1,79 +1,174 @@
+/* ----------- Global Styles ----------- */
 :root{
-  --bg:#f5f7fb; --card:#ffffff; --accent:#0b74de; --muted:#5b6777; 
-  --radius:14px; --maxw:1100px; --shadow:0 10px 30px rgba(15,23,42,0.08);
-}
-*{box-sizing:border-box;}
-body{margin:0;background:var(--bg);font-family:Inter, Poppins, system-ui; color:#0b2236;}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:28px;}
-header{display:flex;justify-content:space-between;align-items:center;padding:6px 0;}
-.brand{display:flex;gap:14px;align-items:center;}
-.logo{
-  width:120px;    
-  height:auto;      
-  object-fit:contain;
-  border-radius:14px;
+    --bg:#f6f8fb;
+    --card:#ffffff;
+    --muted:#6b7280;
+    --accent:#0f766e;
+    --accent-2:#06b6d4;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-@media(max-width:720px){
-  .logo{
-    width:90px;     
+*{ box-sizing:border-box; }
+body{
+    margin:0;
+    background:linear-gradient(180deg,#f3fafb 0%,var(--bg) 100%);
+    color:#0f172a;
+    line-height:1.5;
+}
+a{ color:inherit; }
+
+/* ----------- Layout ----------- */
+.container{
+    max-width:1140px;
+    margin:auto;
+    padding:18px;
+}
+
+/* ----------- Header ----------- */
+.header-area{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.title-image{
+    width:100%;
+    max-width:600px;
     height:auto;
-  }
+    display:block;
+    margin:0 auto 12px;
+    object-fit:contain;
 }
 
-h1{margin:0;font-size:22px;font-weight:800;}
-p.lead{color:var(--muted);margin:4px 0 0;font-size:14px;}
-.hero{display:grid;grid-template-columns:1fr 330px;gap:24px;margin-top:24px;}
-.card{background:var(--card);padding:20px;border-radius:var(--radius);box-shadow:var(--shadow);}
-.download-card{display:flex;justify-content:space-between;align-items:center;gap:12px;}
-.btn{background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700;}
-.btn:hover{opacity:0.9;}
-.btn-ghost{padding:10px 16px;border:1px solid #cdd4df;border-radius:10px;color:var(--muted);text-decoration:none;font-weight:500;}
-.price{font-size:32px;font-weight:800;color:var(--accent);margin:0;}
-.plan{
-  background:#fff;
-  padding:18px;
-  border-radius:12px;
-  border:1px solid rgba(0,0,0,0.05);
-  box-shadow:0 4px 16px rgba(0,0,0,0.04);
-  transition:all .25s ease;
-  cursor:pointer;
+.brand h1{
+    margin:0;
+    font-size:26px;
 }
+.brand p{ margin:6px 0 0; }
 
-/* hover animation */
-.plan:hover{
-  transform:translateY(-6px) scale(1.05);
-  box-shadow:0 10px 28px rgba(0,0,0,0.12);
-  border-color:rgba(0,0,0,0.12);
+/* ----------- Hero Section ----------- */
+.hero{
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:20px;
 }
-
-/* Premium wrapper stays slightly lifted, hover even more */
-.plan.popular{
-  border:2px solid var(--accent);
-  box-shadow:0 6px 22px rgba(0,0,0,0.08);
-  transition:all .25s ease;
-}
-
-.plan.popular:hover{
-  transform:translateY(-10px) scale(1.06);
-  box-shadow:0 14px 32px rgba(0,0,0,0.16);
-}
-
-/* Disable hover on mobile */
 @media(max-width:720px){
-  .plan:hover,
-  .plan.popular:hover {
-    transform:none;
-    box-shadow:0 4px 16px rgba(0,0,0,0.04);
-  }
+    .hero{ grid-template-columns:1fr; }
 }
 
-.features ul{padding-left:18px;color:var(--muted);}
-table{width:100%;border-collapse:collapse;}
-th,td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left;}
-.os-box{background:#f8fbff;padding:14px;border-radius:12px;border:1px solid #dfe7f2;margin-top:14px;}
-.os-item{background:#fff;border:1px solid #e4e6ea;padding:8px 10px;border-radius:8px;font-size:13px;margin-right:6px;display:inline-block;margin-bottom:6px;}
+/* ----------- Download Card ----------- */
+.download-card{
+    padding:18px;
+    border-radius:12px;
+    background:linear-gradient(180deg,rgba(6,182,212,0.06),rgba(6,182,212,0.02));
+    border:1px solid rgba(6,182,212,0.12);
+}
+.download-meta{
+    font-size:13px;
+    color:var(--muted);
+}
+
+.btn{
+    padding:10px 14px;
+    font-weight:600;
+    border-radius:10px;
+    background:var(--accent);
+    color:white;
+    text-decoration:none;
+}
+.btn.secondary{
+    background:transparent;
+    color:var(--accent);
+    border:1px solid rgba(15,118,110,0.3);
+}
+
+/* ----------- OS Box ----------- */
+.os-box{
+    margin-top:14px;
+    padding:14px;
+    background:var(--card);
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.04);
+}
+.pill-group{ display:flex;flex-wrap:wrap;gap:6px;margin:10px 0; }
+.pill{
+    padding:6px 10px;
+    border-radius:999px;
+    background:rgba(15,118,110,0.08);
+    color:var(--accent);
+    font-weight:600;
+    font-size:13px;
+}
+
+/* ----------- Plans Grid ----------- */
+.plans-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:18px;
+}
 @media(max-width:900px){
-  .hero{grid-template-columns:1fr;}
-  .plans{flex-direction:column;}
+    .plans-grid{ grid-template-columns:repeat(2,1fr); }
+}
+@media(max-width:720px){
+    .plans-grid{ grid-template-columns:1fr; }
+}
+
+/* Unified plan style */
+.plan{
+    background:var(--card);
+    padding:18px;
+    border-radius:12px;
+    border:1px solid rgba(0,0,0,0.05);
+    box-shadow:0 4px 14px rgba(0,0,0,0.04);
+    transition:.25s ease;
+}
+
+/* Hover animation (PC only) */
+@media (hover:hover) and (pointer:fine){
+    .plan:hover{
+        transform:translateY(-6px) scale(1.045);
+        box-shadow:0 12px 30px rgba(0,0,0,0.12);
+    }
+}
+
+.plan .lead{
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:10px;
+}
+.plan .price{
+    font-size:24px;
+    font-weight:700;
+    color:#0d9488;
+    margin:6px 0 10px;
+}
+.plan-features{
+    padding-left:18px;
+    color:var(--muted);
+}
+
+/* Help & Aside */
+.help-box, .side-card{
+    background:var(--card);
+    padding:18px;
+    border-radius:12px;
+    border:1px solid rgba(0,0,0,0.05);
+    box-shadow:0 6px 18px rgba(0,0,0,0.05);
+    margin-top:20px;
+}
+
+.side-card .accent-line{
+    width:50px;
+    height:4px;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));
+    border-radius:4px;
+    margin:12px 0;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    margin-top:30px;
+    color:var(--muted);
+    font-size:14px;
 }
